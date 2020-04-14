@@ -15,10 +15,27 @@ if(isset($_GET["id"])){
 	$sqlpassword = "";
 	$dbname = "friend";
 	$conn = new mysqli($servername, $sqlusername, $sqlpassword, $dbname);
-		
+	
+	
+	//Insecure Method: Concatenate Method
 	$sql = "SELECT name, email FROM contact WHERE id='$id'";
 	$result = $conn->query($sql);
-
+	
+	//Secured Method: Prepared Statement
+	/*
+	$stmt = $conn->prepare("SELECT name, email FROM contact WHERE id=?");
+	$stmt->bind_param("s", $id);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	*/
+	
+	//Secured Method: Input Validation
+	/*
+	$id = (is_numeric($id)? $id:'0');
+	$sql = "SELECT name, email FROM contact WHERE id='$id'";
+	$result = $conn->query($sql);
+	*/
+	
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
 			echo "Name: " . $row["name"]. 
