@@ -1,4 +1,8 @@
-<h1>Add Contact</h1>
+<?php 
+	include 'includes/header.php';
+?>
+
+<h2>Add Contact</h2>
 <form action="" method="post">
 Username: <input type="text" name="username" /><br/>
 Email: <input type="text" name="email" /><br/>
@@ -7,15 +11,11 @@ Email: <input type="text" name="email" /><br/>
 
 <?php
 
+include 'config/database.php';
+
 if(isset($_POST["username"]) && isset($_POST["email"])){
 	$username = $_POST["username"];
 	$email = $_POST["email"];
-	
-	$servername = "localhost";
-	$sqlusername = "root";
-	$sqlpassword = "";
-	$dbname = "friend";
-	$conn = new mysqli($servername, $sqlusername, $sqlpassword, $dbname);
 	
 	$sql = "INSERT INTO contact (name, email) VALUES ('$username', '$email')";
 	
@@ -25,6 +25,5 @@ if(isset($_POST["username"]) && isset($_POST["email"])){
 	
 	$conn->close();
 }
+
 ?>
-<hr/>
-<a href="searchContact.php">Search Contact</a> | <a href="updateNote.php">Update Note</a><br/>

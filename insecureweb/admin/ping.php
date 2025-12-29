@@ -1,6 +1,10 @@
+<?php 
+	include '../includes/headerAdmin.php';
+?>
+
 <html>
 <body>
-<h1>Check Connection</h1>
+<h2>Check Connection</h2>
 <form action="" method="get">
 IP Address: <input type="text" name="ip" />
 <input type="submit" />

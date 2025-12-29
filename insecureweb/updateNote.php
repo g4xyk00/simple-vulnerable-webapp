@@ -1,8 +1,14 @@
-<h1>Update Note</h1>
+<?php 
+	include 'includes/header.php';
+?>
+
+<h2>Update Note</h2>
 <form action="" method="get">
 Content: <input type="text" name="content" />
 <input type="submit" />
 </form>
+
+<!-- To update note.txt -->
 
 <?php
 
@@ -13,5 +19,3 @@ if(isset($_GET["content"])){
 }
 
 ?>
-<hr/>
-<a href="addContact.php">Add Contact</a> | <a href="searchContact.php">Search Contact</a><br/>

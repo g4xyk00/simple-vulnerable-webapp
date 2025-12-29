@@ -1,4 +1,8 @@
-<h1>Search Contact</h1>
+<?php 
+	include 'includes/header.php';
+?>
+
+<h2>Search Contact</h2>
 <form action="" method="get">
 ID: <input type="text" name="id" />
 <input type="submit" />
@@ -10,11 +14,7 @@ if(isset($_GET["id"])){
 	$id = $_GET["id"];
 	echo "<h3>Details for ID ".$id."</h3>";
 	
-	$servername = "localhost";
-	$sqlusername = "root";
-	$sqlpassword = "";
-	$dbname = "friend";
-	$conn = new mysqli($servername, $sqlusername, $sqlpassword, $dbname);
+	include 'config/database.php';
 	
 	
 	//Insecure Method: Concatenate Method
@@ -48,5 +48,3 @@ if(isset($_GET["id"])){
 }
 
 ?>
-<hr/>
-<a href="addContact.php">Add Contact</a>| <a href="updateNote.php">Update Note</a><br/>

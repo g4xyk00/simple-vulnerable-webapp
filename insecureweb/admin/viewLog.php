@@ -1,6 +1,8 @@
-<html>
-<body>
-<h1>View Webserver Log</h1>
+<?php 
+	include '../includes/headerAdmin.php';
+?>
+
+<h2>View Webserver Log</h2>
 <a href="viewLog.php?dir=../../../apache/logs/access.log">apache log</a>
 <br/>
 <textarea rows="5" cols="180" disabled>
